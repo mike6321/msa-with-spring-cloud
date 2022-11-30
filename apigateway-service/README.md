@@ -302,3 +302,59 @@ http://localhost:8000/second-service/check
 
 <img width="726" alt="image" src="https://user-images.githubusercontent.com/33277588/204751826-96375bbd-37cc-4d68-b620-3f9bd145f1e7.png">
 
+# **LoadBalancer**
+
+* FISRT-SERVICE Client 설정 추가
+
+```yaml
+server:
+  port: 8081
+
+spring:
+  application:
+    name: my-first-service
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+```
+
+* SECOND-SERVICE Client 설정 추가
+
+```yaml
+server:
+  port: 8082
+
+spring:
+  application:
+    name: my-second-service
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+```
+
+* Gateway routes 정보 수정 (localhost -> lb)
+
+```yaml
+gateway:
+			/.../
+			
+      routes:
+        - id: first-service
+          uri: lb://MY-FIRST-SERVICE
+					/.../
+					
+        - id: second-service
+          uri: lb://MY-SECOND-SERVICE
+					/.../
+```
+
+<img width="726" alt="image" src="https://user-images.githubusercontent.com/33277588/204759405-5b0c42ed-1b2a-4f68-ba30-571a28253be8.png">
+
