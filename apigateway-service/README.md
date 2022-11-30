@@ -148,3 +148,75 @@ http://localhost:8000/second-service/check
 
 <img width="726" alt="image" src="https://user-images.githubusercontent.com/33277588/204725530-bed5d54f-3757-4588-9d5b-16edba17a6e3.png">
 
+# **Global Filter 추가**
+
+```java
+@Component
+@Slf4j
+public class GlobalFilter extends AbstractGatewayFilterFactory<GlobalFilter.Config> {
+
+    public GlobalFilter() {
+        super(Config.class);
+    }
+
+    @Override
+    public GatewayFilter apply(Config config) {
+        // Custom Pre Filter
+        return ((exchange, chain) -> {
+            ServerHttpRequest request = exchange.getRequest();
+            ServerHttpResponse response = exchange.getResponse();
+
+            log.info("Global Filter baseMessage : {}", config.getBaseMessage());
+
+            if (config.isPreLogger()) {
+                log.info("Global Filter Start : request id -> {}", request.getId());
+            }
+
+            // Custom Post Filter
+            return chain.filter(exchange).then(Mono.fromRunnable(() -> {
+                if (config.isPostLogger()) {
+                    log.info("Global Filter End : request status code -> {}", response.getStatusCode());
+                }
+            }));
+        });
+    }
+
+    @Data
+    public static class Config {
+        private String baseMessage;
+        private boolean preLogger;
+        private boolean postLogger;
+    }
+
+}
+```
+
+```yaml
+gateway:
+      default-filters:
+        - name: GlobalFilter
+          args:
+            baseMessage: Sring Cloud Gateway Global Filter
+            preLogger: true
+            postLogger: true
+      routes:
+        - id: first-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/first-service/**
+          filters:
+            - CustomFilter
+        - id: second-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/second-service/**
+          filters:
+            - CustomFilter
+```
+
+http://localhost:8000/second-service/check
+
+<img width="726" alt="image" src="https://user-images.githubusercontent.com/33277588/204736094-af02d814-1e1e-4ae0-9a6b-244c950ff2ad.png">
+
+
+
