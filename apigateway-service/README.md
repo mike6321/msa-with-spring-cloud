@@ -218,5 +218,87 @@ http://localhost:8000/second-service/check
 
 <img width="726" alt="image" src="https://user-images.githubusercontent.com/33277588/204736094-af02d814-1e1e-4ae0-9a6b-244c950ff2ad.png">
 
+# **선택적 필터 적용**
 
+```yaml
+gateway:
+      default-filters:
+        - name: GlobalFilter
+          args:
+            baseMessage: Sring Cloud Gateway Global Filter
+            preLogger: true
+            postLogger: true
+      routes:
+        - id: first-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/first-service/**
+          filters:
+            - CustomFilter
+        - id: second-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/second-service/**
+          filters:
+            - name: CustomFilter
+            - name: LoggingFilter
+              args:
+                baseMessage: Sring Cloud Gateway Logging Filter
+                preLogger: true
+                postLogger: true
+```
+
+```java
+@Component
+@Slf4j
+public class LoggingFilter extends AbstractGatewayFilterFactory<LoggingFilter.Config> {
+
+    public LoggingFilter() {
+        super(Config.class);
+    }
+
+    @Override
+    public GatewayFilter apply(Config config) {
+        GatewayFilter gatewayFilter = (exchange, chain) -> {
+            ServerHttpRequest request = exchange.getRequest();
+            ServerHttpResponse response = exchange.getResponse();
+
+            log.info("Logging Filter baseMessage : {}", config.getBaseMessage());
+
+            if (config.isPreLogger()) {
+                log.info("Logging Filter Start : request id -> {}", request.getId());
+            }
+
+            Mono<Void> mono = chain.filter(exchange).then(Mono.fromRunnable(() -> {
+                if (config.isPostLogger()) {
+                    log.info("Logging Filter End : request status code -> {}", response.getStatusCode());
+                }
+            }));
+            return mono;
+        };
+
+        return new OrderedGatewayFilter(gatewayFilter, Ordered.HIGHEST_PRECEDENCE);
+    }
+
+    @Data
+    public static class Config {
+        private String baseMessage;
+        private boolean preLogger;
+        private boolean postLogger;
+    }
+
+}
+```
+
+http://localhost:8000/first-service/check
+
+* LoggingFilter 적용 X
+
+<img width="726" alt="image" src="https://user-images.githubusercontent.com/33277588/204751721-44621d0e-9b8f-457b-8e46-90668fb2b8ee.png">
+
+http://localhost:8000/second-service/check
+
+* LoggingFilter 적용 O
+
+<img width="726" alt="image" src="https://user-images.githubusercontent.com/33277588/204751826-96375bbd-37cc-4d68-b620-3f9bd145f1e7.png">
 

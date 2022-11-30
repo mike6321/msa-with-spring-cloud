@@ -33,6 +33,11 @@ spring:
           predicates:
             - Path=/second-service/**
           filters:
-            - CustomFilter
+            - name: CustomFilter
+            - name: LoggingFilter
+              args:
+                baseMessage: Sring Cloud Gateway Logging Filter
+                preLogger: true
+                postLogger: true
 #            - AddRequestHeader=second-request, second-request-header
 #            - AddResponseHeader=second-response, second-response-header
