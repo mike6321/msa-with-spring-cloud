@@ -1,9 +1,9 @@
 ### health check
-GET http://localhost:54045/health_check
+GET http://localhost:8000/user-service/health_check
 Accept: application/json
 
 ### create user
-POST http://localhost:56507/users
+POST http://localhost:8000/user-service/users
 Content-Type: application/json
 
 {
@@ -11,4 +11,14 @@ Content-Type: application/json
   "name": "testUser",
   "password": "12345"
 }
+
+### get users
+GET http://localhost:8000/user-service/users
+Accept: application/json
+
+
+### get user
+GET http://localhost:8000/user-service/users/59e22a84-5c62-42fb-b34e-a87cf7b85994
+Accept: application/json
+
 
