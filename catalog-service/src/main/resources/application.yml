@@ -2,6 +2,9 @@ server:
   port: 0
 
 spring:
+  sql:
+    init:
+      mode: always
   application:
     name: catalog-service
   jpa:
@@ -13,7 +16,7 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
-        generate-ddl: true
+    defer-datasource-initialization: true
   datasource:
     url: jdbc:mysql://localhost:3306/msa_catalog?useUnicode=true&characterEncoding=utf8
     driver-class-name: com.mysql.jdbc.Driver
