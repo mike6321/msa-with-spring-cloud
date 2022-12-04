@@ -1,0 +1,27 @@
+### health check
+GET http://localhost:8000/order-service/health_check
+Accept: application/json
+
+### create user
+POST http://localhost:8000/user-service/users
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "name": "testUser",
+  "password": "12345"
+}
+
+### create order (c7613267-4755-4b06-9405-ad52a99ba254)
+POST http://localhost:8000/order-service/c7613267-4755-4b06-9405-ad52a99ba254/orders
+Content-Type: application/json
+
+{
+  "productId": "CATALOG-001",
+  "qty": "10",
+  "unitPrice": "1500"
+}
+
+### get orders
+GET http://localhost:8000/order-service/c7613267-4755-4b06-9405-ad52a99ba254/orders
+Accept: application/json
