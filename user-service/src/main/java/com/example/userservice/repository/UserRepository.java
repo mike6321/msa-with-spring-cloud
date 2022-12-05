@@ -9,4 +9,7 @@ public interface UserRepository extends CrudRepository<UserEntity, Long> {
     @Transactional(readOnly = true)
     UserEntity findByUserId(String userId);
 
+    @Transactional(readOnly = true)
+    UserEntity findByEmail(String username);
+
 }
