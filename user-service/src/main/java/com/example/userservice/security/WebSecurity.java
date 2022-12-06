@@ -2,6 +2,7 @@ package com.example.userservice.security;
 
 import com.example.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,6 +16,12 @@ import javax.servlet.Filter;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class WebSecurity extends WebSecurityConfigurerAdapter {
+
+    @Value("${token.expiration_time}")
+    private String expirationTime;
+
+    @Value("${token.secret}")
+    private String secret;
 
     private final UserService userService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -32,7 +39,10 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     }
 
     private Filter getAuthenticationFilter() throws Exception {
-        AuthenticationFilter authenticationFilter = new AuthenticationFilter(userService);
+        AuthenticationFilter authenticationFilter = new AuthenticationFilter(
+                userService,
+                expirationTime,
+                secret);
         authenticationFilter.setAuthenticationManager(authenticationManager());
         return authenticationFilter;
     }
