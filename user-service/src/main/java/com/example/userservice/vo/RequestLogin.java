@@ -1,11 +1,18 @@
 package com.example.userservice.vo;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
-import lombok.Data;
 
-@Data
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class RequestLogin {
 
     @NotNull(message = "email cannot be null.")

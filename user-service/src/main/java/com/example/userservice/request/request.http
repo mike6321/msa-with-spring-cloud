@@ -21,4 +21,11 @@ Accept: application/json
 GET http://localhost:8000/user-service/users/59e22a84-5c62-42fb-b34e-a87cf7b85994
 Accept: application/json
 
+### login
+POST http://localhost:8000/user-service/login
+Content-Type: application/json
 
+{
+  "email": "test@test.com",
+  "password": "12345"
+}
