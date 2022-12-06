@@ -1,5 +1,6 @@
 ### health check
 GET http://localhost:8000/user-service/health_check
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3NTJmN2E4OC1lZTFhLTQ2M2ItOWE0ZS1lYjg3YTZiMjU5OTYiLCJleHAiOjE2NzA0MDUxMjN9.TGstx4Mh9bOot5nXyuoxKQkp_ZOKwTFcXzFAf_RzThsh2yYcFwMwGWa_OTV-yRrO0YqXS5T8OkoxzLh6ek2J4g
 Accept: application/json
 
 ### create user
@@ -14,11 +15,13 @@ Content-Type: application/json
 
 ### get users
 GET http://localhost:8000/user-service/users
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3NTJmN2E4OC1lZTFhLTQ2M2ItOWE0ZS1lYjg3YTZiMjU5OTYiLCJleHAiOjE2NzA0MDUxMjN9.TGstx4Mh9bOot5nXyuoxKQkp_ZOKwTFcXzFAf_RzThsh2yYcFwMwGWa_OTV-yRrO0YqXS5T8OkoxzLh6ek2J4g
 Accept: application/json
 
 
 ### get user
-GET http://localhost:8000/user-service/users/59e22a84-5c62-42fb-b34e-a87cf7b85994
+GET http://localhost:8000/user-service/users/752f7a88-ee1a-463b-9a4e-eb87a6b25996
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3NTJmN2E4OC1lZTFhLTQ2M2ItOWE0ZS1lYjg3YTZiMjU5OTYiLCJleHAiOjE2NzA0MDUxMjN9.TGstx4Mh9bOot5nXyuoxKQkp_ZOKwTFcXzFAf_RzThsh2yYcFwMwGWa_OTV-yRrO0YqXS5T8OkoxzLh6ek2J4g
 Accept: application/json
 
 ### login
