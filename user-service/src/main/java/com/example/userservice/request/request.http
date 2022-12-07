@@ -1,7 +1,24 @@
-### health check
-GET http://localhost:8000/user-service/health_check
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3NTJmN2E4OC1lZTFhLTQ2M2ItOWE0ZS1lYjg3YTZiMjU5OTYiLCJleHAiOjE2NzA0MDUxMjN9.TGstx4Mh9bOot5nXyuoxKQkp_ZOKwTFcXzFAf_RzThsh2yYcFwMwGWa_OTV-yRrO0YqXS5T8OkoxzLh6ek2J4g
+### actuator health
+GET http://localhost:8000/user-service/actuator/health
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwOThlMTc0Ny0zOWZjLTQ1YTUtYjA3NC0wMmJkODYxZDhkNDAiLCJleHAiOjE2NzA1MDEwMTl9.CvhP2HKqVNi1U2gp4EbnHPYt9hyn7Qq5LK7lCPh1dyXp9nEa26yzXq72sXAk_AWt2_zcMwDwgde5I0N5Z_TLYA
 Accept: application/json
+
+### actuator beans
+GET http://localhost:8000/user-service/actuator/beans
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwOThlMTc0Ny0zOWZjLTQ1YTUtYjA3NC0wMmJkODYxZDhkNDAiLCJleHAiOjE2NzA1MDEwMTl9.CvhP2HKqVNi1U2gp4EbnHPYt9hyn7Qq5LK7lCPh1dyXp9nEa26yzXq72sXAk_AWt2_zcMwDwgde5I0N5Z_TLYA
+Accept: application/json
+
+### actuator beans
+GET http://localhost:8000/user-service/actuator/beans
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwOThlMTc0Ny0zOWZjLTQ1YTUtYjA3NC0wMmJkODYxZDhkNDAiLCJleHAiOjE2NzA1MDEwMTl9.CvhP2HKqVNi1U2gp4EbnHPYt9hyn7Qq5LK7lCPh1dyXp9nEa26yzXq72sXAk_AWt2_zcMwDwgde5I0N5Z_TLYA
+Accept: application/json
+
+### actuator refresh
+POST http://localhost:49925/actuator/refresh
+Content-Type: application/json
+
+{
+}
 
 ### create user
 POST http://localhost:8000/user-service/users
@@ -15,13 +32,13 @@ Content-Type: application/json
 
 ### get users
 GET http://localhost:8000/user-service/users
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3NTJmN2E4OC1lZTFhLTQ2M2ItOWE0ZS1lYjg3YTZiMjU5OTYiLCJleHAiOjE2NzA0MDUxMjN9.TGstx4Mh9bOot5nXyuoxKQkp_ZOKwTFcXzFAf_RzThsh2yYcFwMwGWa_OTV-yRrO0YqXS5T8OkoxzLh6ek2J4g
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwOThlMTc0Ny0zOWZjLTQ1YTUtYjA3NC0wMmJkODYxZDhkNDAiLCJleHAiOjE2NzA1MDEwMTl9.CvhP2HKqVNi1U2gp4EbnHPYt9hyn7Qq5LK7lCPh1dyXp9nEa26yzXq72sXAk_AWt2_zcMwDwgde5I0N5Z_TLYA
 Accept: application/json
 
 
 ### get user
 GET http://localhost:8000/user-service/users/752f7a88-ee1a-463b-9a4e-eb87a6b25996
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3NTJmN2E4OC1lZTFhLTQ2M2ItOWE0ZS1lYjg3YTZiMjU5OTYiLCJleHAiOjE2NzA0MDUxMjN9.TGstx4Mh9bOot5nXyuoxKQkp_ZOKwTFcXzFAf_RzThsh2yYcFwMwGWa_OTV-yRrO0YqXS5T8OkoxzLh6ek2J4g
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwOThlMTc0Ny0zOWZjLTQ1YTUtYjA3NC0wMmJkODYxZDhkNDAiLCJleHAiOjE2NzA1MDEwMTl9.CvhP2HKqVNi1U2gp4EbnHPYt9hyn7Qq5LK7lCPh1dyXp9nEa26yzXq72sXAk_AWt2_zcMwDwgde5I0N5Z_TLYA
 Accept: application/json
 
 ### login
