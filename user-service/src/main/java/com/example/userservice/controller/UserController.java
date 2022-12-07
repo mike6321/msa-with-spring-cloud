@@ -35,15 +35,12 @@ public class UserController {
         String token = environment.getProperty("token.secret");
         String tokenExpirationTime = environment.getProperty("local.server.port");
 
-
-        return String.format("It's working in user-service on port(local.server.port) %s" +
-                        ", port(server.port) %s",
-                ", token secret %s",
-                ", token expiration time %s",
-                localPort,
-                serverPort,
-                token,
-                tokenExpirationTime);
+        return String.format(
+                "It's working in user-service on port(local.server.port) : " + localPort,
+                ", port(server.port) : " + serverPort,
+                ", token secret : " + token,
+                ", token expiration time : " + tokenExpirationTime
+        );
     }
 
     @GetMapping("/welcome")
