@@ -36,9 +36,9 @@ public class UserController {
         String tokenExpirationTime = environment.getProperty("local.server.port");
 
         return String.format(
-                "It's working in user-service on port(local.server.port) : " + localPort,
-                ", port(server.port) : " + serverPort,
-                ", token secret : " + token,
+                "It's working in user-service on port(local.server.port) : " + localPort +
+                ", port(server.port) : " + serverPort +
+                ", token secret : " + token +
                 ", token expiration time : " + tokenExpirationTime
         );
     }
