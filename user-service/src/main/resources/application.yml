@@ -13,12 +13,12 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
-#    generate-ddl: true
+  #    generate-ddl: true
   datasource:
     url: jdbc:mysql://localhost:3306/msa_user?useUnicode=true&characterEncoding=utf8
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password:
+    password: Rownsdn91@
 
 eureka:
   client:
@@ -36,6 +36,6 @@ logging:
   level:
     com.example.userservice: DEBUG
 
-token:
-  expiration_time: 86400000
-  secret: Z3Jvd2luZy11cC10b2dldGhlci10ZXN0LXNlY3JldC1rZXktdGVzdC10ZXN0LXRlc3QtdGVzdC10ZXN0LXRlc3QtdGVzdC10ZXN0LXRlc3Q=
+#token:
+#  expiration_time: 86400000
+#  secret: Z3Jvd2luZy11cC10b2dldGhlci10ZXN0LXNlY3JldC1rZXktdGVzdC10ZXN0LXRlc3QtdGVzdC10ZXN0LXRlc3QtdGVzdC10ZXN0LXRlc3Q=
