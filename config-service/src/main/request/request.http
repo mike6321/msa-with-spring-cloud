@@ -1,0 +1,10 @@
+### encrypt
+POST http://127.0.0.1:8888/encrypt
+
+junwoo
+
+
+### decrypt
+POST http://127.0.0.1:8888/decrypt
+
+c02b3951fce164d12a10625bec2321c4b31e107a6b9ba4b8b33537dd19d52fc8
