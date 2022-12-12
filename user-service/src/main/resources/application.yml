@@ -19,11 +19,6 @@ spring:
         show_sql: true
         format_sql: true
   #    generate-ddl: true
-  datasource:
-    url: jdbc:mysql://localhost:3306/msa_user?useUnicode=true&characterEncoding=utf8
-    driver-class-name: com.mysql.jdbc.Driver
-    username: root
-    password: Rownsdn91@
 
 eureka:
   client:
