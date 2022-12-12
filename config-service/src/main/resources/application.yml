@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: config-service
+  profiles:
+    active: native
   rabbitmq:
     host: 127.0.0.1
     port: 5672
@@ -12,11 +14,8 @@ spring:
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/mike6321/msa-with-spring-cloud.git
-          username:
-          password:
-          default-label: master
+        native:
+          search-locations: file://${user.home}/IdeaProjects/repository/native-file-repo
 management:
   endpoints:
     web:
