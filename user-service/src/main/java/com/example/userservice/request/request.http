@@ -37,7 +37,7 @@ Accept: application/json
 
 
 ### get user
-GET http://localhost:8000/user-service/users/b6653d35-edaf-4532-9249-cdc17acac1da
+GET http://localhost:8000/user-service/users/42f4fe16-26b3-497e-99c9-f792d9a46cae
 Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmNzJlODI1Zi05ZGY5LTRhMzUtYTBiNC04Nzg2MDhjODkyMGEiLCJleHAiOjE2NzA5MzY2Njh9.oT_zreera9Ux93GLZ2WWjqi29IP0qI5OWwwSQyuAtdTEHQ5VjJhMrYug9mRPQ3hnYQXz5IBZB2pHvOr3R6B_PA
 Accept: application/json
 
@@ -51,7 +51,7 @@ Content-Type: application/json
 }
 
 ### create order
-POST http://localhost:8000/order-service/b6653d35-edaf-4532-9249-cdc17acac1da/orders
+POST http://localhost:8000/order-service/42f4fe16-26b3-497e-99c9-f792d9a46cae/orders
 Content-Type: application/json
 
 {
