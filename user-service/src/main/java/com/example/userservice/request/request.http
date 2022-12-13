@@ -37,7 +37,7 @@ Accept: application/json
 
 
 ### get user
-GET http://localhost:8000/user-service/users/752f7a88-ee1a-463b-9a4e-eb87a6b25996
+GET http://localhost:8000/user-service/users/b6653d35-edaf-4532-9249-cdc17acac1da
 Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmNzJlODI1Zi05ZGY5LTRhMzUtYTBiNC04Nzg2MDhjODkyMGEiLCJleHAiOjE2NzA5MzY2Njh9.oT_zreera9Ux93GLZ2WWjqi29IP0qI5OWwwSQyuAtdTEHQ5VjJhMrYug9mRPQ3hnYQXz5IBZB2pHvOr3R6B_PA
 Accept: application/json
 
@@ -48,4 +48,14 @@ Content-Type: application/json
 {
   "email": "test@test.com",
   "password": "12345"
+}
+
+### create order
+POST http://localhost:8000/order-service/b6653d35-edaf-4532-9249-cdc17acac1da/orders
+Content-Type: application/json
+
+{
+  "productId": "CATALOG-001",
+  "qty": "10",
+  "unitPrice": "1500"
 }
