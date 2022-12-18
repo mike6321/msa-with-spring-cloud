@@ -25,3 +25,26 @@ Content-Type: application/json
 ### get orders
 GET http://localhost:8000/order-service/c7613267-4755-4b06-9405-ad52a99ba254/orders
 Accept: application/json
+
+### post source connect
+POST http://127.0.0.1:8083/connectors
+Content-Type: application/json
+
+{
+  "name" : "my-source-connect2",
+  "config" : {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+    "connection.url": "jdbc:mysql://localhost:3306/msa_order",
+    "connection.user": "root",
+    "connection.password": "",
+    "mode": "incrementing",
+    "incrementing.column.name": "id",
+    "table.whitelist": "msa_order.users",
+    "topic.prefix": "my_topic_",
+    "tasks.max": "1"
+  }
+}
+
+### get source connect
+GET http://127.0.0.1:8083/connectors/my-source-connect2/status
+Accept: application/json
