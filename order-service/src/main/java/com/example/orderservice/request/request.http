@@ -31,7 +31,7 @@ POST http://127.0.0.1:8083/connectors
 Content-Type: application/json
 
 {
-  "name" : "my-source-connect2",
+  "name" : "my-source-connect",
   "config" : {
     "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
     "connection.url": "jdbc:mysql://localhost:3306/msa_order",
@@ -45,6 +45,10 @@ Content-Type: application/json
   }
 }
 
+### delete connect
+DELETE http://127.0.0.1:8083/connectors/my-source-connect
+
+
 ### get source connect
-GET http://127.0.0.1:8083/connectors/my-source-connect2/status
+GET http://127.0.0.1:8083/connectors/my-source-connect/status
 Accept: application/json
