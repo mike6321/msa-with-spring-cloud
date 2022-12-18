@@ -52,3 +52,26 @@ DELETE http://127.0.0.1:8083/connectors/my-source-connect
 ### get source connect
 GET http://127.0.0.1:8083/connectors/my-source-connect/status
 Accept: application/json
+
+### post sink connect
+POST http://127.0.0.1:8083/connectors
+Content-Type: application/json
+
+{
+  "name" : "my-sink-connect",
+  "config" : {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "connection.url": "jdbc:mysql://localhost:3306/msa_order",
+    "connection.user": "root",
+    "connection.password": "",
+    "auto.create": "true",
+    "auto.evolve": "true",
+    "delete.enabled": "false",
+    "tasks.max": "1",
+    "topics": "my_topic_users"
+  }
+}
+
+### get connect
+GET http://127.0.0.1:8083/connectors
+Accept: application/json
