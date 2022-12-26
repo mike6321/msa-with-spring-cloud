@@ -110,6 +110,10 @@ cp /Users/nhn/.m2/repository/mysql/mysql-connector-java/8.0.30/mysql-connector-j
 
 # Kafka Source Connect
 
+```shell
+cd confluent-6.1.0
+```
+
 ### connect 실행
 
 ```sh
@@ -247,4 +251,18 @@ insert into users (user_id, pwd, name) values ('user2', 'test1111', 'user name')
 {"schema":{"type":"struct","fields":[{"type":"int32","optional":false,"field":"id"},{"type":"string","optional":true,"field":"user_id"},{"type":"string","optional":true,"field":"pwd"},{"type":"string","optional":true,"field":"name"},{"type":"int64","optional":true,"name":"org.apache.kafka.connect.data.Timestamp","version":1,"field":"create_at"}],"optional":false,"name":"users"},"payload":{"id":7,"user_id":"user3","pwd":"test1111","name":"user name","create_at":1671404345000}}
 
 <img width="618" alt="image" src="https://user-images.githubusercontent.com/33277588/208302802-6fffe7d9-e310-4469-abcc-934dee162792.png">
+
+## Port Kill
+
+```shell
+sudo lsof -PiTCP -sTCP:LISTEN
+sudo lsof -i :2181
+sudo lsof -i :8083
+```
+
+```shell
+sudo kill -9 pid
+```
+
+
 

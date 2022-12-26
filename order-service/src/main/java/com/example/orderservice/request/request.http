@@ -36,7 +36,7 @@ Content-Type: application/json
     "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
     "connection.url": "jdbc:mysql://localhost:3306/msa_order",
     "connection.user": "root",
-    "connection.password": "",
+    "connection.password": "Rownsdn91@",
     "mode": "incrementing",
     "incrementing.column.name": "id",
     "table.whitelist": "msa_order.users",
@@ -58,7 +58,7 @@ POST http://127.0.0.1:8083/connectors
 Content-Type: application/json
 
 {
-  "name" : "my-sink-connect",
+  "name" : "my-order-sink-connect",
   "config" : {
     "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
     "connection.url": "jdbc:mysql://localhost:3306/msa_order",
@@ -68,7 +68,7 @@ Content-Type: application/json
     "auto.evolve": "true",
     "delete.enabled": "false",
     "tasks.max": "1",
-    "topics": "my_topic_users"
+    "topics": "orders"
   }
 }
 
