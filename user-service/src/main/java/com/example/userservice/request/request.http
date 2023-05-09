@@ -1,21 +1,21 @@
 ### actuator health
 GET http://localhost:8000/user-service/actuator/health
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5ZmE2NWM1Ni02ZDc5LTRjMWItYjU3Ni1lNWNhMmU0NDJlOGUiLCJleHAiOjE2NzE2MzAxMTR9.igtw8S3K98auhtt-nYla49IAotWNrDd7w_gHhZCe_TlWWFe8ZPvG7oGNIVsfj2caxWO68mZ4Gbz3SAdr0cGLMw
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyYWQ1YjA2Zi04YzJiLTQ5MWQtODlmNy1jNmNiZGVhZGU1NDMiLCJleHAiOjE2NzI3NTExNDJ9._45l1fhU2cZ8XsNqQISpKOkwayhm3IRirZt6AILMyR8vg_q-CjwJfxgLABYaFRiDjFu3EN1Uddf5brFOL6j5zA
 Accept: application/json
 
 ### actuator beans
 GET http://localhost:8000/user-service/actuator/beans
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5ZmE2NWM1Ni02ZDc5LTRjMWItYjU3Ni1lNWNhMmU0NDJlOGUiLCJleHAiOjE2NzE2MzAxMTR9.igtw8S3K98auhtt-nYla49IAotWNrDd7w_gHhZCe_TlWWFe8ZPvG7oGNIVsfj2caxWO68mZ4Gbz3SAdr0cGLMw
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyYWQ1YjA2Zi04YzJiLTQ5MWQtODlmNy1jNmNiZGVhZGU1NDMiLCJleHAiOjE2NzI3NTExNDJ9._45l1fhU2cZ8XsNqQISpKOkwayhm3IRirZt6AILMyR8vg_q-CjwJfxgLABYaFRiDjFu3EN1Uddf5brFOL6j5zA
 Accept: application/json
 
 ### actuator busrefresh
 POST http://localhost:8000/user-service/actuator/busrefresh
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5ZmE2NWM1Ni02ZDc5LTRjMWItYjU3Ni1lNWNhMmU0NDJlOGUiLCJleHAiOjE2NzE2MzAxMTR9.igtw8S3K98auhtt-nYla49IAotWNrDd7w_gHhZCe_TlWWFe8ZPvG7oGNIVsfj2caxWO68mZ4Gbz3SAdr0cGLMw
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyYWQ1YjA2Zi04YzJiLTQ5MWQtODlmNy1jNmNiZGVhZGU1NDMiLCJleHAiOjE2NzI3NTExNDJ9._45l1fhU2cZ8XsNqQISpKOkwayhm3IRirZt6AILMyR8vg_q-CjwJfxgLABYaFRiDjFu3EN1Uddf5brFOL6j5zA
 Accept: application/json
 
 ### actuator beans
 GET http://localhost:8000/user-service/actuator/beans
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5ZmE2NWM1Ni02ZDc5LTRjMWItYjU3Ni1lNWNhMmU0NDJlOGUiLCJleHAiOjE2NzE2MzAxMTR9.igtw8S3K98auhtt-nYla49IAotWNrDd7w_gHhZCe_TlWWFe8ZPvG7oGNIVsfj2caxWO68mZ4Gbz3SAdr0cGLMw
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyYWQ1YjA2Zi04YzJiLTQ5MWQtODlmNy1jNmNiZGVhZGU1NDMiLCJleHAiOjE2NzI3NTExNDJ9._45l1fhU2cZ8XsNqQISpKOkwayhm3IRirZt6AILMyR8vg_q-CjwJfxgLABYaFRiDjFu3EN1Uddf5brFOL6j5zA
 Accept: application/json
 
 ### actuator refresh
@@ -37,13 +37,13 @@ Content-Type: application/json
 
 ### get users
 GET http://localhost:8000/user-service/users
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5ZmE2NWM1Ni02ZDc5LTRjMWItYjU3Ni1lNWNhMmU0NDJlOGUiLCJleHAiOjE2NzE2MzAxMTR9.igtw8S3K98auhtt-nYla49IAotWNrDd7w_gHhZCe_TlWWFe8ZPvG7oGNIVsfj2caxWO68mZ4Gbz3SAdr0cGLMw
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyYWQ1YjA2Zi04YzJiLTQ5MWQtODlmNy1jNmNiZGVhZGU1NDMiLCJleHAiOjE2NzI3NTExNDJ9._45l1fhU2cZ8XsNqQISpKOkwayhm3IRirZt6AILMyR8vg_q-CjwJfxgLABYaFRiDjFu3EN1Uddf5brFOL6j5zA
 Accept: application/json
 
 
 ### get user
-GET http://localhost:8000/user-service/users/9fa65c56-6d79-4c1b-b576-e5ca2e442e8e
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5ZmE2NWM1Ni02ZDc5LTRjMWItYjU3Ni1lNWNhMmU0NDJlOGUiLCJleHAiOjE2NzE2MzAxMTR9.igtw8S3K98auhtt-nYla49IAotWNrDd7w_gHhZCe_TlWWFe8ZPvG7oGNIVsfj2caxWO68mZ4Gbz3SAdr0cGLMw
+GET http://localhost:8000/user-service/users/c8c01ac7-e5ed-4287-b503-dbb228faafe6
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyYWQ1YjA2Zi04YzJiLTQ5MWQtODlmNy1jNmNiZGVhZGU1NDMiLCJleHAiOjE2NzI3NTExNDJ9._45l1fhU2cZ8XsNqQISpKOkwayhm3IRirZt6AILMyR8vg_q-CjwJfxgLABYaFRiDjFu3EN1Uddf5brFOL6j5zA
 Accept: application/json
 
 ### login
@@ -56,11 +56,11 @@ Content-Type: application/json
 }
 
 ### create order
-POST http://localhost:8000/order-service/9fa65c56-6d79-4c1b-b576-e5ca2e442e8e/orders
+POST http://localhost:8000/order-service/c8c01ac7-e5ed-4287-b503-dbb228faafe6/orders
 Content-Type: application/json
 
 {
-  "productId": "CATALOG-003",
+  "productId": "CATALOG-001",
   "qty": "15",
   "unitPrice": "2000"
 }

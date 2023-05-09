@@ -7,6 +7,12 @@ spring:
       mode: always
   application:
     name: order-service
+  zipkin:
+    base-url: http://127.0.0.1:9411
+    enabled: true
+  sleuth:
+    sampler:
+      probability: 1.0
   jpa:
     hibernate:
       ddl-auto: create
@@ -21,7 +27,7 @@ spring:
     url: jdbc:mysql://localhost:3306/msa_order?useUnicode=true&characterEncoding=utf8
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password:
+    password: Rownsdn91@
 
 eureka:
   client:
@@ -34,3 +40,7 @@ eureka:
 
 greeting:
   message: Welcome to the simple ecommerce.
+
+logging:
+  level:
+    com.example.orderservice: DEBUG

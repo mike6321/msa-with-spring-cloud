@@ -21,7 +21,7 @@ spring:
     url: jdbc:mysql://localhost:3306/msa_catalog?useUnicode=true&characterEncoding=utf8
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password:
+    password: Rownsdn91@
 
 eureka:
   client:
